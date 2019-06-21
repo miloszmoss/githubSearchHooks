@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import UserItem from './UserItem';
-import PropTypes from 'prop-types';
+import GithubContext from '../../context/github/githubContext';
 
-const Users = ({ users, loading }) => {
+const Users = () => {
+  const githubContext = useContext(GithubContext);
+  const { loading, users } = githubContext;
+
   return (
     <div style={userStyle}>
       {loading && <div>loading</div>}
@@ -11,11 +14,6 @@ const Users = ({ users, loading }) => {
       ))}
     </div>
   );
-};
-
-Users.propTypes = {
-  users: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
 };
 
 const userStyle = {
