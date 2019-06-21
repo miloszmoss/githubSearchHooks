@@ -96,7 +96,7 @@ const User = ({ match }) => {
       <div className="card text-center">
         <div className="badge badge-primary">Followers: {followers}</div>
         <div className="badge badge-success">Following: {following}</div>
-        <div className="badge badge-light">Followers: {public_repos}</div>
+        <div className="badge badge-light">Repos: {public_repos}</div>
         <div className="badge badge-dark">Public GIsts: {public_gists}</div>
       </div>
       <Repos repos={repos} />
